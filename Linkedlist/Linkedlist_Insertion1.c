@@ -20,7 +20,7 @@ void create()
     scanf("%d", &ptr->info);
     first= ptr;
     ptr->link= NULL;
-    printf("Do you want to add another element in list? ");
+    printf("Do you want to add another element in list? If yes, Press '1':  ");
     scanf("%d", &choice);
     while(choice==1){
         nptr= (struct node*)malloc(sizeof(struct node));
@@ -30,7 +30,7 @@ void create()
         ptr=nptr;
         ptr->link= NULL;
 
-        printf("Do you want to add another element in list? ");
+        printf("Do you want to add another element in list? If yes, Press '1': ");
         scanf("%d", &choice);
 
     }
@@ -40,6 +40,7 @@ void create()
 void traverse(){
     struct node *ptr;
     ptr=first;
+    printf("\n*****Your Linkedlist Print Here*****\n");
     while(ptr->link!=NULL){
         printf("ptr-> %d \n",ptr->info);
         ptr=ptr->link;
@@ -49,6 +50,7 @@ void traverse(){
 
 //main block
 int main(){
+    printf("\n*****Program Starts Here*****\n");
     void create();
     void traverse();
 
