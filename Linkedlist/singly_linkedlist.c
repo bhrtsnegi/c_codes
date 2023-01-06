@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<malloc.h>
+#include<stdlib.h>
 
 // Structure define
 struct node
@@ -179,6 +179,33 @@ void deletionValue()
     }
 }
 
+// Deletion Position Element
+
+void deletionPos(){
+    struct node *ptr, *nptr;
+    int pos;
+    nptr= first;
+    printf("Enter the position from which you want to delete the element: ");
+    scanf("%d", &pos);
+    if(first==NULL){
+        printf("\n Underflow. Exiting...\n");
+    }
+    else{
+        while(pos!=1 && nptr!=NULL){
+            ptr=nptr;
+            nptr=nptr->link;
+            pos--;
+        }
+        if(nptr==NULL){
+            printf("Position Not Available");
+        }
+        else{
+            ptr->link=nptr->link;
+        }
+    }
+
+}
+
 // list Traverse 
 
 void listTraverse()
@@ -186,45 +213,132 @@ void listTraverse()
     struct node *ptr;
     ptr=first;
     printf("\n*****Your Linkedlist Print Here*****\n");
-    while(ptr->link!=NULL)
+    while(ptr!=NULL)
     {
         printf("ptr-> %d \n",ptr->info);
         ptr=ptr->link;
     }
-    printf("ptr-> %d\n",ptr->info);
 }
 
+// Ascending Sorting
+
+void ascSort(){
+    struct node *ptr, *nptr;
+    ptr= first;
+    int temp;
+    while(ptr!=NULL){
+        nptr->link= ptr;
+        while(nptr!=NULL){
+            if(nptr->info<ptr->info){
+                temp= ptr->info;
+                ptr->info= nptr->info;
+                nptr->info= temp;
+            }
+            nptr=nptr->link;
+        }
+        ptr= ptr->link;
+    }
+    ptr= first;
+    printf("\n*****Your Ascending Sorted Linkedlist Print Here*****\n");
+    while(ptr!=NULL)
+    {
+        printf("ptr-> %d \n",ptr->info);
+        ptr=ptr->link;
+    }
+}
+
+// Descending Sorting
+
+void dscSort(){
+
+}
+
+// Element Search
+
+void ElementSearch(){
+
+    struct node *ptr, *nptr;
+    int pos;
+    nptr= first;
+    printf("Enter the position for the element: ");
+    scanf("%d", &pos);
+    if(first==NULL){
+        printf("\n Underflow. Exiting...\n");
+    }
+    else{
+        while(pos!=1 && nptr!=NULL){
+            ptr=nptr;
+            nptr=nptr->link;
+            pos--;
+        }
+        if(nptr==NULL){
+            printf("Position Not Available");
+        }
+        else{
+            printf("\nThe desired Element is %d\n", nptr->info);
+        }
+    }
+}
+
+// Position Search
+
+void PosSearch(){
+    struct node *ptr;
+    ptr=first;
+    int val, counter=0;
+    printf("\nEnter the element you want to search for: ");
+    scanf("%d", &val);
+
+    if(first==NULL){
+        printf("\n Underflow. Exiting...\n");
+    }
+    else{
+        while(ptr->info!=val && ptr!=NULL){
+            ptr=ptr->link;
+            counter++;
+        }
+
+        if(ptr==NULL){
+            printf("\nElement Not Found\n");
+        }
+        else{
+            printf("\nElement is in %d position\n", counter+1);
+        }
+    }
+}
 
 // main body
 void main()
 {
 
     int choice;
-    printf("\n**** Your Program Starts Here ****\n");
+    printf("\n\n**** Your Program Starts Here ****\n");
     //here is the point where goto statement gets enter
     here:
     printf("\nSelect the option you want to perform from the list\n");
-    printf("\n-> Enter '1' for creation of a linked list \n");
-    printf("-> Enter '2' for insertion of element in list \n");
-    printf("-> Enter '3' for deletion of any element from the list \n");
-    printf("-> Enter '4' to traverse the linked list \n");
-    printf("-> Enter any other key to exit\n");
+    printf("\n-> Press '1' for creation of a linked list \n");
+    printf("-> Press '2' for insertion of element in list \n");
+    printf("-> Press '3' for deletion of any element from the list \n");
+    printf("-> Press '4' to traverse the linked list \n");
+    printf("-> Press '5' to perform Sorting \n");
+    printf("-> Press '6' to perform Searching \n");
+    printf("-> Press any other key to exit\n");
 
     printf("Enter your choice: ");
     scanf("%d", &choice);
+    system("cls");
 
     switch(choice)
     {
         case 1:
         createList();
         goto here;
-        break;
 
         case 2:
-        printf("\n-> Enter '1' to insert an element in beginning \n");
-        printf("-> Enter '2' to insert an element at the end \n");
-        printf("-> Enter '3' to insert an element after any element \n");
-        printf("-> Enter any key to go back to main menu");
+        printf("\n-> Press '1' to insert an element in beginning \n");
+        printf("-> Press '2' to insert an element at the end \n");
+        printf("-> Press '3' to insert an element after any element \n");
+        printf("-> Press any key to go back to main menu");
         printf("\n Enter Your Choice: \n");
         scanf("%d", &choice);
 
@@ -233,12 +347,10 @@ void main()
             case 1:
             insertionBeginning();
             goto here;
-            break;
 
             case 2:
             insertionEnd();
             goto here;
-            break;
 
             case 3:
             insertionAfter();
@@ -251,10 +363,11 @@ void main()
         break;
 
         case 3:
-        printf("\n-> Enter '1' to delete an element in beginning \n");
-        printf("-> Enter '2' to delete an element at the end \n");
-        printf("-> Enter '3' to delete an element in between \n");
-        printf("-> Enter any key to go back to main menu");
+        printf("\n-> Press '1' to delete an element in beginning \n");
+        printf("-> Press '2' to delete an element at the end \n");
+        printf("-> Press '3' to delete an element in between \n");
+        printf("-> Press '4' to delete an element from specific position \n");
+        printf("-> Press any key to go back to main menu");
         printf("\n Enter Your Choice: \n");
         scanf("%d", &choice);
 
@@ -263,29 +376,66 @@ void main()
             case 1:
             deletionBeginning();
             goto here;
-            break;
 
             case 2:
             deletionEnd();
             goto here;
-            break;
 
             case 3:
             deletionValue();
             goto here;
-            break;
+
+            case 4:
+            deletionPos();
+            goto here;
             
             default:
             printf("\nGoing back to main menu\n");
             goto here;
 
         }
-        break;
 
         case 4:
         listTraverse();
         goto here;
-        break;
+
+        case 5:
+        printf("\nWhich order you want to perform\n");
+        printf("\nPress '1' for Ascending\n");
+        printf("Press '2' for Descending\n");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+            ascSort();
+            goto here;
+
+            case 2:
+            dscSort();
+            goto here;
+            
+            default:
+            printf("\nGoing back to main menu\n");
+            goto here;
+        }
+
+        case 6:
+        printf("\nWhich search you want to perform\n");
+        printf("\nPress '1' to search for an element's position\n");
+        printf("Press '2' to search for element in specific position\n");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+            PosSearch();
+            goto here;
+
+            case 2:
+            ElementSearch();
+            goto here;
+            
+            default:
+            printf("\nGoing back to main menu\n");
+            goto here;
+        }
 
         default:
         printf("\nExiting...\n");
@@ -293,4 +443,3 @@ void main()
 
     }
 }
-    
