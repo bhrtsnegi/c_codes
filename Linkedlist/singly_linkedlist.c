@@ -1,14 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// Structure define
+// Structure defined
 struct node
 {
     int info;
     struct node *link;
 };
 struct node *first;
-// createList Block
+// createList Block 
 
 void createList()
 {
