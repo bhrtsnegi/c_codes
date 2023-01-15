@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+// Program Starts Here
 int main()
 {
     // A pointer
@@ -24,4 +25,5 @@ int main()
         printf("\n Element %d : %d", i+1, ptr[i]);
     }
     return 0;
+    //End Of Program
 }
