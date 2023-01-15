@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-
+// Program Starts here
 int main()
 {
     int *ptr;
@@ -42,4 +42,5 @@ int main()
         printf("\nElement %d: %d", i+1, ptr[i]);
     }
     return 0;
+    //End Of Program
 }
