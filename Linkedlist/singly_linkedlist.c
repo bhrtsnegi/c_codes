@@ -1,14 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// Structure defined
+// Structure define
 struct node
 {
     int info;
     struct node *link;
 };
 struct node *first;
-// createList Block 
+// createList Block
 
 void createList()
 {
@@ -36,7 +36,7 @@ void createList()
     }
 }
 
-// insertion Beginning Block Starts
+// insertion Beginning Block
 
 void insertionBeginning()
 {
@@ -220,7 +220,7 @@ void listTraverse()
     }
 }
 
-// Ascending Sorting
+// Ascending Sorting (Error in between)
 
 void ascSort(){
     struct node *ptr, *nptr;
@@ -247,7 +247,7 @@ void ascSort(){
     }
 }
 
-// Descending Sorting
+// Descending Sorting(yet not completed)
 
 void dscSort(){
 
