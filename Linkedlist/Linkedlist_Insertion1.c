@@ -2,7 +2,7 @@
 #include<conio.h>
 #include<malloc.h>
 
-// structure declaration
+// structure declaration here
 struct node{
     int info;
     struct node *link;
