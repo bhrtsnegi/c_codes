@@ -34,10 +34,60 @@ int pop()
     }
 }
 
+// Search for an element
+int elementSearch()
+{
+    int val, flag=0;
+    printf("\nEnter the element you want to search: ");
+    scanf("%d", &val);
+    for(int i=0; i<=top; i++)
+    {
+        if(arr[i]==val)
+        {
+            printf("\nElement %d found at %d position.", val, i+1);
+            flag++;
+            break;
+        }
+    }
+    if(flag==0)
+    {
+        printf("\nElement not available in stack.\n");
+    }
+}
+
+// search element by index
+int indexElementSearch()
+{
+    int val;
+    printf("Enter the position of element: ");
+    scanf("%d", &val);
+    if(val>top)
+    {
+        printf("Index out of bound");
+    }
+    else
+    {
+        printf("Element at %d position is %d", val, arr[val-1]);
+    }
+}
+
 // Peek block
 int peek()
 {
     printf("\nPeek Element of this stack is %d\n", arr[top]);
+}
+
+// Empty or Not
+int isEmpty()
+{
+    if(top==-1)
+    {
+        printf("\nStack is Empty\n");
+    }
+    else
+    {
+        printf("\nStack is not empty\n");
+    }
 }
 
 // Display block
@@ -75,6 +125,21 @@ int main(){
             break;
             
             case 3:
+            printf("\n Press '1' to search for an element\n");
+            printf("\nPress '2' to search an element with specific index\n");
+            printf("\n Enter your choice: ");
+            scanf("%d", &choice);
+            //nested switch
+            switch(choice)
+            {
+                case 1:
+                elementSearch();
+                break;
+
+                case 2:
+                indexElementSearch();
+                break;
+            }
             break;
 
             case 4:
@@ -82,6 +147,7 @@ int main(){
             break;
 
             case 5:
+            isEmpty();
             break;
 
             case 6:
