@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// Structure defined
+// Structure define
 struct node
 {
     struct node *preLink;
@@ -61,9 +61,63 @@ void insertionEnd(){
     struct node *newNode;
 }
 
+// Insertion After
+
+void insertionAfter(){
+
+}
+
+// Delete Beginning
+
+void deletionBeginning(){
+
+}
+
+// Delete End
+
+void deletionEnd(){
+
+}
+
+// Delete Value
+
+void deletionValue(){
+
+}
+
+// Delete Position
+
+void deletionPos(){
+
+}
+
+// Ascending Sort
+
+void ascSort(){
+
+}
+
+// Descending Sort
+
+void dscSort(){
+
+}
+
+// Position Search
+
+void posSearch(){
+
+}
+
+// Element Search
+
+void elementSearch(){
+
+}
+
 // Traverse List
 
-void listTraverse(){
+void normalTraverse(){
     
     struct node *ptr;
     ptr=first;
@@ -115,97 +169,97 @@ int main()
             insertionBeginning();
             goto here;
 
-        //     case 2:
-        //     insertionEnd();
-        //     goto here;
+            case 2:
+            insertionEnd();
+            goto here;
 
-        //     case 3:
-        //     insertionAfter();
-        //     goto here;
+            case 3:
+            insertionAfter();
+            goto here;
 
             default:
             printf("\nGoing back to main menu\n");
             goto here;
         }
 
-        // case 3:
-        // printf("\n-> Press '1' to delete an element in beginning \n");
-        // printf("-> Press '2' to delete an element at the end \n");
-        // printf("-> Press '3' to delete an element in between \n");
-        // printf("-> Press '4' to delete an element from specific position \n");
-        // printf("-> Press any key to go back to main menu");
-        // printf("\n Enter Your Choice: \n");
-        // scanf("%d", &choice);
+        case 3:
+        printf("\n-> Press '1' to delete an element in beginning \n");
+        printf("-> Press '2' to delete an element at the end \n");
+        printf("-> Press '3' to delete an element in between \n");
+        printf("-> Press '4' to delete an element from specific position \n");
+        printf("-> Press any key to go back to main menu");
+        printf("\n Enter Your Choice: \n");
+        scanf("%d", &choice);
 
-        // switch(choice)
-        // {
-        //     case 1:
-        //     deletionBeginning();
-        //     goto here;
+        switch(choice)
+        {
+            case 1:
+            deletionBeginning();
+            goto here;
 
-        //     case 2:
-        //     deletionEnd();
-        //     goto here;
+            case 2:
+            deletionEnd();
+            goto here;
 
-        //     case 3:
-        //     deletionValue();
-        //     goto here;
+            case 3:
+            deletionValue();
+            goto here;
 
-        //     case 4:
-        //     deletionPos();
-        //     goto here;
+            case 4:
+            deletionPos();
+            goto here;
             
-        //     default:
-        //     printf("\nGoing back to main menu\n");
-        //     goto here;
+            default:
+            printf("\nGoing back to main menu\n");
+            goto here;
 
-        // }
+        }
 
         case 4:
-        listTraverse();
+        normalTraverse();
         goto here;
 
-        // case 5:
-        // printf("\nWhich order you want to perform\n");
-        // printf("\nPress '1' for Ascending\n");
-        // printf("Press '2' for Descending\n");
-        // scanf("%d", &choice);
-        // switch(choice){
-        //     case 1:
-        //     ascSort();
-        //     goto here;
+        case 5:
+        printf("\nWhich order you want to perform\n");
+        printf("\nPress '1' for Ascending\n");
+        printf("Press '2' for Descending\n");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+            ascSort();
+            goto here;
 
-        //     case 2:
-        //     dscSort();
-        //     goto here;
+            case 2:
+            dscSort();
+            goto here;
             
-        //     default:
-        //     printf("\nGoing back to main menu\n");
-        //     goto here;
-        // }
+            default:
+            printf("\nGoing back to main menu\n");
+            goto here;
+        }
 
-        // case 6:
-        // printf("\nWhich search you want to perform\n");
-        // printf("\nPress '1' to search for an element's position\n");
-        // printf("Press '2' to search for element in specific position\n");
-        // scanf("%d", &choice);
-        // switch(choice){
-        //     case 1:
-        //     PosSearch();
-        //     goto here;
+        case 6:
+        printf("\nWhich search you want to perform\n");
+        printf("\nPress '1' to search for an element's position\n");
+        printf("Press '2' to search for element in specific position\n");
+        scanf("%d", &choice);
+        switch(choice){
+            case 1:
+            posSearch();
+            goto here;
 
-        //     case 2:
-        //     ElementSearch();
-        //     goto here;
+            case 2:
+            elementSearch();
+            goto here;
             
-        //     default:
-        //     printf("\nGoing back to main menu\n");
-        //     goto here;
-        // }
+            default:
+            printf("\nGoing back to main menu\n");
+            goto here;
+        }
 
-        // default:
-        // printf("\nExiting...\n");
-        // break;
+        default:
+        printf("\nExiting...\n");
+        break;
 
     }
 }
