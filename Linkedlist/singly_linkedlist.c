@@ -220,38 +220,6 @@ void listTraverse()
     }
 }
 
-// Ascending Sorting (Error in between)
-
-void ascSort(){
-    struct node *ptr, *nptr;
-    ptr= first;
-    int temp;
-    while(ptr!=NULL){
-        nptr->link= ptr;
-        while(nptr!=NULL){
-            if(nptr->info<ptr->info){
-                temp= ptr->info;
-                ptr->info= nptr->info;
-                nptr->info= temp;
-            }
-            nptr=nptr->link;
-        }
-        ptr= ptr->link;
-    }
-    ptr= first;
-    printf("\n*****Your Ascending Sorted Linkedlist Print Here*****\n");
-    while(ptr!=NULL)
-    {
-        printf("ptr-> %d \n",ptr->info);
-        ptr=ptr->link;
-    }
-}
-
-// Descending Sorting(yet not completed)
-
-void dscSort(){
-
-}
 
 // Element Search
 
@@ -314,15 +282,14 @@ void main()
     int choice=1;
     printf("\n\n**** Your Program Starts Here ****\n");
     //here is the point where goto statement gets enter
-    while(choice<7)
+    while(choice<6)
     {
         printf("\nSelect the option you want to perform from the list\n");
         printf("\n-> Press '1' for creation of a linked list \n");
         printf("-> Press '2' for insertion of element in list \n");
         printf("-> Press '3' for deletion of any element from the list \n");
         printf("-> Press '4' to traverse the linked list \n");
-        printf("-> Press '5' to perform Sorting \n");
-        printf("-> Press '6' to perform Searching \n");
+        printf("-> Press '5' to perform Searching \n");
         printf("-> Press any other key to exit\n");
 
         printf("Enter your choice: ");
@@ -401,25 +368,6 @@ void main()
             break;
 
             case 5:
-            printf("\nWhich order you want to perform\n");
-            printf("\nPress '1' for Ascending\n");
-            printf("Press '2' for Descending\n");
-            scanf("%d", &choice);
-            switch(choice){
-                case 1:
-                ascSort();
-                break;
-
-                case 2:
-                dscSort();
-                break;
-            
-                default:
-                printf("\nGoing back to main menu\n");
-                break;
-            }
-
-            case 6:
             printf("\nWhich search you want to perform\n");
             printf("\nPress '1' to search for an element's position\n");
             printf("Press '2' to search for element in specific position\n");
