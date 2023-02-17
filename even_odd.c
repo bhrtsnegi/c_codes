@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    // program to find even or odd
+    // program to find even or odd number
     int num, arr[26], count1, count;
     count=0;
     count1=0;
