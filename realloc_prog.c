@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-// Program Starts here
+// Program Starts here.
 int main()
 {
     int *ptr;
