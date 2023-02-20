@@ -1,5 +1,5 @@
 #include<stdio.h>
-// factorial code for any number answer is in range of integer
+// factorial code for any number answer in range of integer
 int main()
 {
  int fact=1,i,n;
