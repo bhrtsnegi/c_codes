@@ -16,7 +16,7 @@ int searchBST();
 
 int main()
 {
-    int val, ch, choice;
+    int val, ch, choice, num;
     printf("*** BST TREE ***\n");
     do
     {
@@ -36,7 +36,8 @@ int main()
             case 2:
             printf("Enter the element: ");
             scanf("%d", &val);
-            searchBST(root, val);
+            num=searchBST(root, val);
+            printf("%d found in tree", num);
             break;
         }
     } while (choice<7);
@@ -53,8 +54,8 @@ int insertBST(struct node *Root, int value)
     {
         Root=(struct node*)malloc(sizeof(struct node));
         Root->data=value;
-        root=Root;
         Root->right=Root->left=NULL;
+        root=Root;
     }
     else
     {
@@ -73,23 +74,26 @@ int insertBST(struct node *Root, int value)
 
 int searchBST(struct node *Root, int value)
 {
-    if(Root==NULL)
+    
+    if(Root->data==value)
     {
-        printf("\nElement Not Found\n");
-    }
-    else if(Root->data==value)
-    {
-        printf("\n %d found in %d level", value, level);
+        return Root->data;
         level=0;
     }
     else if(Root->data<value)
     {
         level++;
+        printf("I am coming here");
         searchBST(Root->right,value);
+    }
+    else if(Root->data>value)
+    {
+        level++;
+        printf("I am coming here");
+        searchBST(Root->left, value);
     }
     else
     {
-        level++;
-        searchBST(Root->left, value);
+        printf("\nElement Not Found\n");
     }
 }
