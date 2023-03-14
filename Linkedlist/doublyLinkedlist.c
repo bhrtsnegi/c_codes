@@ -2,7 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-// Structure define
+// Structure defined here
 struct node
 {
     struct node *preLink;
