@@ -1,4 +1,4 @@
-// DOUBLY LINKEDLIST MENU DRIVEN CODE
+// DOUBLY LINKEDLIST MENU DRIVEN CODEs
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -200,7 +200,7 @@ void dscSort(){
 
 }
 
-// Position Search
+// Position Search not done
 
 void posSearch(){
 
