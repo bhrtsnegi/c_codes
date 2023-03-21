@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//creating structure
+//creating structure here
 struct node
 {
     int info;
