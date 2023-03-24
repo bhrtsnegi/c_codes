@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//Program Starts Here
+//Program Starts Here is
 int main()
 {
     int *ptr;
